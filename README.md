@@ -24,5 +24,5 @@ export JAVA_HOME=$(readlink -f /usr/bin/java | sed "s:bin/java::")
 Running Hadoop
 > /usr/local/hadoop/bin/hadoop
 ```
-
+Reference link: https://www.digitalocean.com/community/tutorials/how-to-install-hadoop-in-stand-alone-mode-on-ubuntu-16-04
 
