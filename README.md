@@ -38,6 +38,15 @@ After setup files edited:
 * sudo chown -R saurabh:staff /usr/local/hadoop_store
 * hadoop namenode -format
 
+* vi ~/.profile
+```
+	"~/.profile addition"
+	alias hstart="/usr/local/Cellar/hadoop/2.8.2/sbin/start-dfs.sh;/usr/local/Cellar/hadoop/2.8.2/sbin/start-yarn.sh"
+	alias hstop="/usr/local/Cellar/hadoop/2.8.2/sbin/stop-yarn.sh;/usr/local/Cellar/hadoop/2.8.2/sbin/stop-dfs.sh"
+```
+
+*source ~/.profile
+*hdfs namenode -format
 
 Reference:
 	https://medium.com/@luck/installing-hadoop-2-7-2-on-ubuntu-16-04-3a34837ad2db
