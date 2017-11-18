@@ -30,13 +30,13 @@ Reference link: https://www.digitalocean.com/community/tutorials/how-to-install-
 For OSX
 After setup files edited:
 
-vi /usr/local/Cellar/hadoop/2.8.2/libexec/etc/hadoop/hadoop-env.sh
-vi /usr/local/Cellar/hadoop/2.8.2/libexec/etc/hadoop/core-site.xml
-cp /usr/local/Cellar/hadoop/2.8.2/libexec/etc/hadoop/mapred-site.xml.template /usr/local/Cellar/hadoop/2.8.2/libexec/etc/hadoop/mapred-site.xml
-vi /usr/local/Cellar/hadoop/2.8.2/libexec/etc/hadoop/mapred-site.xml
-vi /usr/local/Cellar/hadoop/2.8.2/libexec/etc/hadoop/hdfs-site.xml
-sudo chown -R saurabh:staff /usr/local/hadoop_store
-hadoop namenode -format
+* vi /usr/local/Cellar/hadoop/2.8.2/libexec/etc/hadoop/hadoop-env.sh
+* vi /usr/local/Cellar/hadoop/2.8.2/libexec/etc/hadoop/core-site.xml
+* cp /usr/local/Cellar/hadoop/2.8.2/libexec/etc/hadoop/mapred-site.xml.template /usr/local/Cellar/hadoop/2.8.2/libexec/etc/hadoop/mapred-site.xml
+* vi /usr/local/Cellar/hadoop/2.8.2/libexec/etc/hadoop/mapred-site.xml
+* vi /usr/local/Cellar/hadoop/2.8.2/libexec/etc/hadoop/hdfs-site.xml
+* sudo chown -R saurabh:staff /usr/local/hadoop_store
+* hadoop namenode -format
 
 
 Reference:
