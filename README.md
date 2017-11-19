@@ -31,10 +31,64 @@ For OSX
 After setup files edited:
 
 * vi /usr/local/Cellar/hadoop/2.8.2/libexec/etc/hadoop/hadoop-env.sh
+```
+Change the line
+export HADOOP_OPTS="$HADOOP_OPTS -Djava.net.preferIPv4Stack=true"
+to
+export HADOOP_OPTS="$HADOOP_OPTS -Djava.net.preferIPv4Stack=true -Djava.security.krb5.realm= -Djava.security.krb5.kd
+```
 * vi /usr/local/Cellar/hadoop/2.8.2/libexec/etc/hadoop/core-site.xml
+```
+<configuration>
+    <property>
+        <name>hadoop.tmp.dir</name>
+        <value>/usr/local/Cellar/hadoop/hdfs/tmp</value>
+        <description>A base for other temporary directories.</description>
+    </property>
+    <property>
+        <name>fs.default.name</name>
+        <value>hdfs://localhost:9000</value>
+        <description>The name of the default file system.  A URI whose
+  scheme and authority determine the FileSystem implementation.  The
+  uri's scheme determines the config property (fs.SCHEME.impl) naming
+  the FileSystem implementation class.  The uri's authority is used to
+  determine the host, port, etc. for a filesystem.</description>
+    </property>
+</configuration>
+```
 * cp /usr/local/Cellar/hadoop/2.8.2/libexec/etc/hadoop/mapred-site.xml.template /usr/local/Cellar/hadoop/2.8.2/libexec/etc/hadoop/mapred-site.xml
 * vi /usr/local/Cellar/hadoop/2.8.2/libexec/etc/hadoop/mapred-site.xml
+```
+<configuration>
+<property>
+  <name>mapred.job.tracker</name>
+  <value>localhost:9010</value>
+  <description>The host and port that the MapReduce job tracker runs
+  at.  If "local", then jobs are run in-process as a single map
+  and reduce task.
+  </description>
+</property>
+</configuration>
+```
 * vi /usr/local/Cellar/hadoop/2.8.2/libexec/etc/hadoop/hdfs-site.xml
+<configuration>
+<property>
+  <name>dfs.replication</name>
+  <value>1</value>
+  <description>Default block replication.
+  The actual number of replications can be specified when the file is created.
+  The default is used if replication is not specified in create time.
+  </description>
+ </property>
+ <property>
+   <name>dfs.namenode.name.dir</name>
+   <value>file:/usr/local/hadoop_store/hdfs/namenode</value>
+ </property>
+ <property>
+   <name>dfs.datanode.data.dir</name>
+   <value>file:/usr/local/hadoop_store/hdfs/datanode</value>
+ </property>
+</configuration>
 * sudo chown -R saurabh:staff /usr/local/hadoop_store
 * hadoop namenode -format
 
