@@ -101,9 +101,30 @@ export HADOOP_OPTS="$HADOOP_OPTS -Djava.net.preferIPv4Stack=true -Djava.security
 
 *source ~/.profile
 *hdfs namenode -format
+----------------------------------------------------
+### Running wordcount example
+* Inside samples directory:
+	* Step1: Jar creation from WordCount.java
+	``` 
+		export JAVA_HOME=$(/usr/libexec/java_home)
+		export PATH=${JAVA_HOME}/bin:${PATH}
+		export HADOOP_CLASSPATH=${JAVA_HOME}/lib/tools.jar
+		hadoop com.sun.tools.javac.Main WordCount.java
+		jar cf wc.jar WordCount*.class
+	```
+* Put input files on location:
+```
+	$ hdfs dfs -put file01 /wordcount_input
+	for checking files and content: 
+	hadoop fs -ls /
+	hadoop fs -cat /wordcount_input/
+```
+* For running: Inside samples directory:
+	```hadoop jar wc.jar WordCount /wordcount_input /wordcount_output```
 
 Reference:
-	https://medium.com/@luck/installing-hadoop-2-7-2-on-ubuntu-16-04-3a34837ad2db
-	https://dtflaneur.wordpress.com/2015/10/02/installing-hadoop-on-mac-osx-el-capitan/
-	http://www.bogotobogo.com/Hadoop/BigData_hadoop_Install_on_ubuntu_16_04_single_node_cluster.php
+* https://medium.com/@luck/installing-hadoop-2-7-2-on-ubuntu-16-04-3a34837ad2db
+* https://dtflaneur.wordpress.com/2015/10/02/installing-hadoop-on-mac-osx-el-capitan/
+* http://www.bogotobogo.com/Hadoop/BigData_hadoop_Install_on_ubuntu_16_04_single_node_cluster.php
+* https://hadoop.apache.org/docs/current/hadoop-mapreduce-client/hadoop-mapreduce-client-core/MapReduceTutorial.html#Example:_WordCount_v2.0
 
