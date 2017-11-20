@@ -121,6 +121,7 @@ export HADOOP_OPTS="$HADOOP_OPTS -Djava.net.preferIPv4Stack=true -Djava.security
 ```
 * For running: Inside samples directory:
 	```hadoop jar wc.jar WordCount /wordcount_input /wordcount_output```
+* Checking the contents of output: ```hadoop fs -cat /wordcount_output/part-r-00000```
 
 Reference:
 * https://medium.com/@luck/installing-hadoop-2-7-2-on-ubuntu-16-04-3a34837ad2db
