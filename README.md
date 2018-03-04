@@ -130,9 +130,10 @@ Reference:
 * https://hadoop.apache.org/docs/current/hadoop-mapreduce-client/hadoop-mapreduce-client-core/MapReduceTutorial.html#Example:_WordCount_v2.0
 
 
-######################################################################################################
+#############################################################################################
 
 For running on mac: https://amodernstory.com/2014/09/23/installing-hadoop-on-mac-osx-yosemite/
+
 INSTALLING HADOOP ON MAC PART 1
 
 A step by step guide to get your running with Hadoop today! In Hadoop on Mac part 2 we actually walk through the creation and compilation process of Java Hadoop Wordcount from beginning to end and automating it with .pom files. hadooplogo
